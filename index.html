@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>ArcHome</title>
+  <link href="arc.css" type="text/css" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link href="archome_fav.png" rel="icon" />
+  <link href="archome.manifest" rel="manifest" />
+  <script src="papaparse.min.js"></script>
+  <script src="arc.js"></script>
+</head>
+<body>
+  <nav id="nav">
+    <ul class="desktop">
+      <li>
+        <a href="#timetable">Horraire</a>
+      </li>
+      <li>
+        <a href="#calendar">Calendrier</a>
+      </li>
+      <li>
+        <a href="#CP">CP et Projet</a>
+      </li>
+      <li id="links">
+        Autres liens
+        <ul id="intLinks">
+          <li>
+            <a href="http://HEArcGuest:demo@ssl.horus.ch/~schaefer/bin/view/HEArc/">Alphanet</a>
+          </li>
+          <li>
+            <a href="http://www.stephane-gobron.net/">Stephane Gobron</a>
+          </li>
+          <li>
+            <a href="https://forge.ing.he-arc.ch/">Forge</a>
+          </li>
+          <li>
+            <a href="https://webmail.he-arc.ch/">Mail</a>
+          </li>
+          <li>
+            <a href="https://age.hes-so.ch/">ISA</a>
+          </li>
+          <li>
+            <a href="https://intranet.he-arc.ch/">Intranet</a>
+          </li>
+          <li>
+            <a href="https://www.dropbox.com/sh/5roao3hn5q396jy/AADg6bUttRZEbCjCX7eU6WbOa?dl=0">Dropbox</a>
+          </li>
+        </ul>
+      </li>
+    </ul>
+    <ul class="mobile">
+      <li>
+        <a href="#mNav"><i class="material-icons" style="font-size:1.3em;">menu</i></a>
+      </li>
+    </ul>
+  </nav>
+  <div class="container" id="first">
+    <img class="logo" src="archome.png"/>
+    <div class=cols-111>
+      <div class=card style=background-color:red;>
+
+      </div>
+      <div class=card style=background-color:blue;>
+
+      </div>
+      <div class=card style=background-color:green;>
+
+      </div>
+    </div>
+  </div><div class="container" id="timetable">
+      <h1>Timetable</h1>
+      <div class="cols-3">
+        <div class="card" id="schedule">
+
+        </div>
+      </div>
+  </div>
+  <div class="container" id="calendar">
+    <h1>Calendrier</h1>
+    <div class="cols-3">
+      <div class="card">
+        <img src="calendar.png"/>
+      </div>
+    </div>
+  </div>
+  <div class="container" id="CP">
+    <h1>CP's et Projets</h1>
+    <div class="cols-21">
+      <div class=card id="CPL">
+
+      </div>
+      <div class="card desktop">
+        <h2>Informations</h2>
+        <p>
+          La gestion de la liste des CP / Projets se fait au travers
+          d'un fichier Google Sheet disponible
+          <a href="https://docs.google.com/spreadsheets/d/1BdVTNUMf4Aoo3luC96dFAWlEAVFZydLkPPdDwwUgs7c/edit?usp=sharing">ici</a>
+          .
+        </p>
+
+      </div>
+    </div>
+  </div>
+</div><div class="container" id="footer">
+  <h1></h1>
+  <div class="cols-12">
+    <div class=card>
+      <iframe src="https://discordapp.com/widget?id=346731704322359300&theme=dark" width="350" height="500" allowtransparency="true" frameborder="0"></iframe>
+    </div>
+    <div class=card>
+
+    </div>
+  </div>
+</div><div class="container mobile" id="mNav">
+    <h1>Liens</h1>
+    <div class="cols-3">
+      <div class=card>
+        <ul>
+          <li>
+            <a href="#first">En haut</a>
+          </li>
+          <li>
+            <a href="#timetable">Horraire</a>
+          </li>
+          <li>
+            <a href="#calendar">Calendrier</a>
+          </li>
+          <li>
+            <a href="#CP">CP et Projet</a>
+          </li>
+          <li>
+            Autres liens
+            <ul>
+              <li>
+                <a href="http://HEArcGuest:demo@ssl.horus.ch/~schaefer/bin/view/HEArc/">Alphanet</a>
+              </li>
+              <li>
+                <a href="http://www.stephane-gobron.net/">Stephane Gobron</a>
+              </li>
+              <li>
+                <a href="https://forge.ing.he-arc.ch/">Forge</a>
+              </li>
+              <li>
+                <a href="https://webmail.he-arc.ch/">Mail</a>
+              </li>
+              <li>
+                <a href="https://age.hes-so.ch/">ISA</a>
+              </li>
+              <li>
+                <a href="https://intranet.he-arc.ch/">Intranet</a>
+              </li>
+              <li>
+                <a href="https://www.dropbox.com/sh/5roao3hn5q396jy/AADg6bUttRZEbCjCX7eU6WbOa?dl=0">Dropbox</a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+    </div>
+</div>
+  <script>
+
+  if ('serviceWorker' in navigator) {
+  navigator.serviceWorker.register('sw.js', { scope: '.' }).then(function(reg) {
+    // registration worked
+    console.log('Registration succeeded. Scope is ' + reg.scope);
+  }).catch(function(error) {
+    // registration failed
+    console.log('Registration failed with ' + error);
+  });
+};
+
+  backAnimate = false;
+  window.addEventListener("scroll",function(){
+      if(document.body.scrollTop > 100){
+        nav.style="animation-name: navBlack;";
+        backAnimate = true;
+      }
+      else if(backAnimate){
+        nav.style="animation-name: navAlpha;";
+      }
+  });
+
+  links.addEventListener("mouseover",function(){
+    intLinks.style = "display:block;animation-name:menuShow;"
+  });
+  links.addEventListener("mouseout",function(){
+    intLinks.style = "display:none;"
+  });
+
+  window.addEventListener("load",function(){
+    loadSchedule();
+    ParseCP();
+  });
+  </script>
+</body>
+</html>

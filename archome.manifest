@@ -1,0 +1,10 @@
+{
+  "name": "ArcHome",
+  "short_name": "ArcHome",
+  "start_url": ".",
+  "display": "standalone",
+  "icons": [{
+    "src": "archome_fav.png",
+    "type": "image/png"
+  }]
+}
