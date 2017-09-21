@@ -172,7 +172,7 @@
 
   backAnimate = false;
   window.addEventListener("scroll",function(){
-      if(document.body.scrollTop > 100){
+      if(document.documentElement.scrollTop > 100){
         nav.style="animation-name: navBlack;";
         backAnimate = true;
       }
