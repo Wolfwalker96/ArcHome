@@ -20,7 +20,7 @@ self.addEventListener('fetch', function(event) {
   event.respondWith(
     fetch(event.request).then(function(response){
       let rep = response.clone();
-      caches.open("v3").then(function(cache){
+      caches.open("v3.1").then(function(cache){
         cache.put(event.request,rep);
       });
       return response;
